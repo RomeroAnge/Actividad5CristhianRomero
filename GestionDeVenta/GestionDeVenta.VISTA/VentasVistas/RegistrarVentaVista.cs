@@ -60,14 +60,14 @@ namespace GestionDeVenta.VISTA.VentasVistas
                 Productos producto = productosbss.ObtenerProductosIdBss(IdProductoSeleccionado);
                 dataGridView1.Rows.Add(producto.IdProducto, producto.NombreProducto, 1, producto.PrecioUnitario);
                 MultiplicarFila();
-                label4.Text=SumarColumna("subtotal").ToString();
+                label4.Text = SumarColumna("subtotal").ToString();
             }
         }
         DetalleVentaBss deventabss = new DetalleVentaBss();
         VentasBss ventasbss = new VentasBss();
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count>0)
+            if (dataGridView1.Rows.Count > 0)
             {
                 Ventas venta = new Ventas();
                 venta.FechaVenta = dateTimePicker1.Value;
@@ -86,20 +86,33 @@ namespace GestionDeVenta.VISTA.VentasVistas
                 }
                 MessageBox.Show("El Registro Fue un Exito");
                 dataGridView1.Rows.Clear();
-                label4.Text =string.Empty;
+                label4.Text = string.Empty;
             }
             else
             {
                 MessageBox.Show("Ingrese Algunos Productos");
             }
-            
+
         }
 
-      
+
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             label4.Text = SumarColumna("subtotal").ToString();
             MultiplicarFila();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try{
+                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+            }
+            catch
+            {
+                MessageBox.Show("Primero Ingrese los Productos");
+            }
+
+
         }
     }
 }

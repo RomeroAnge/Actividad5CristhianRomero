@@ -35,6 +35,7 @@
             button2 = new Button();
             label3 = new Label();
             label4 = new Label();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -64,12 +65,11 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(582, 188);
             dataGridView1.TabIndex = 4;
-
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // button1
             // 
-            button1.Location = new Point(615, 92);
+            button1.Location = new Point(615, 79);
             button1.Name = "button1";
             button1.Size = new Size(40, 29);
             button1.TabIndex = 5;
@@ -105,11 +105,22 @@
             label4.TabIndex = 9;
             label4.Text = "0";
             // 
+            // button3
+            // 
+            button3.Location = new Point(615, 127);
+            button3.Name = "button3";
+            button3.Size = new Size(40, 29);
+            button3.TabIndex = 10;
+            button3.Text = "➖";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // RegistrarVentaVista
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(685, 392);
+            Controls.Add(button3);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(button2);
@@ -134,5 +145,6 @@
         private Button button2;
         private Label label3;
         private Label label4;
+        private Button button3;
     }
 }
